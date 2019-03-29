@@ -12,7 +12,7 @@
             hide-actions
           >
             <template v-slot:items="props">
-              <td>{{ props.item.shift }}</td>
+              <td>{{ props.item.offset }}</td>
               <td><b>{{ props.item.name }}</b></td>
               <td>{{ props.item.data }}</td>
               <td>{{ props.item.type }}</td>
@@ -39,10 +39,10 @@
       return {
         headers: [
           {
-            text: "Shift",
+            text: "Offset",
             align: "left",
             sortable: true,
-            value: "shift",
+            value: "offset",
             width: "100px",
           },
           {

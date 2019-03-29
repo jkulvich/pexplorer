@@ -53,7 +53,7 @@ export default class EXEParser {
     return {
       raw: block,
       rawNumber,
-      shift: "0x" + Bytes.numberToHex(shift, 4),
+      offset: "0x" + Bytes.numberToHex(shift, 4),
       name,
       data: "0x" + Bytes.arrayToHex(block) + (rawNumber ? " / " + rawNumber : ''),
       type: types[block.length] || "Data",
