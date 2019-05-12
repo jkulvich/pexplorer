@@ -14,9 +14,9 @@
             <template v-slot:items="props">
               <td>{{ props.item.offset }}</td>
               <td><b>{{ props.item.name }}</b></td>
-              <td>{{ props.item.data }}</td>
+              <td>{{ dataSpacer(props.item.hex) }}</td>
               <td>{{ props.item.type }}</td>
-              <td>{{ props.item.value }}</td>
+              <td>{{ props.item.text }}</td>
               <td>{{ props.item.desc }}</td>
             </template>
           </v-data-table>
@@ -67,7 +67,7 @@
             width: "50px",
           },
           {
-            text: 'Value',
+            text: 'Text',
             align: 'left',
             sortable: true,
             value: 'value',
@@ -82,6 +82,12 @@
           },
         ],
       }
+    },
+    methods: {
+      // Разбивает строку шеснадцатеричных данных пробелом через каждые два символа
+      dataSpacer(data) {
+        return data.match(/[a-f0-9]{2}/gi).join(' ');
+      },
     },
   }
 </script>
